@@ -1,5 +1,5 @@
 // Package model defines the structure of the application's data
-package model
+package comicmodel
 
 import (
 	"encoding/json"
