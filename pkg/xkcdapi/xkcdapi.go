@@ -23,6 +23,7 @@ func (x XKCD) Get(comicNumber int) (cm.ComicResponse, error) {
 	if err != nil {
 		return cm.ComicResponse{}, err
 	}
+	defer resp.Body.Close()
 
 	var retrievedComic cm.ComicResponse
 	if err := json.NewDecoder(resp.Body).Decode(&retrievedComic); err != nil {
